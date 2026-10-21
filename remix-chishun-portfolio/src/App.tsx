@@ -2235,7 +2235,7 @@ export default function Portfolio() {
           accent={curAtmos.accent}
         />
 
-        {/* ══ VOL.6 — VISION & CONTACT ═══════════════════════════════ */}
+       {/* ══ VOL.6 — VISION & CONTACT ═══════════════════════════════ */}
         <Sec id="vol6">
           <SecHead
             pill="VOL.6 FUTURE VISION & FIT"
@@ -2246,22 +2246,21 @@ export default function Portfolio() {
             glow={ATMOSPHERES.vol6.glow}
           />
 
-          {/* 3 goal cards */}
+          {/* 2 goal cards */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 72 }}>
             {[
-            {
-              num: "01",
-              zh: "認知防衛與決策機制研究",
-              en: "Self-Esteem, Task Difficulty & Self-Handicapping",
-              body: "探討個體在面對壓力情境時的自我設限行為與心理防衛機制。透過嚴謹的實驗設計與變因控制，量化分析不同自尊程度者在困難挑戰下的行為決策，鍛鍊將複雜行為歸因轉化為使用者動機洞察的能力。",
-            },
-            {
-              num: "02",
-              zh: "脈絡洞察與質性發展研究",
-              en: "Atypical Family Structures & Child Development",
-              body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
-            },
-          
+              {
+                num: "01",
+                zh: "認知防衛與決策機制研究",
+                en: "Self-Esteem, Task Difficulty & Self-Handicapping",
+                body: "探討個體在面對壓力情境時的自我設限行為與心理防衛機制。透過嚴謹的實驗設計與變因控制，量化分析不同自尊程度者在困難挑戰下的行為決策，鍛鍊將複雜行為歸因轉化為使用者動機洞察的能力。",
+              },
+              {
+                num: "02",
+                zh: "脈絡洞察與質性發展研究",
+                en: "Atypical Family Structures & Child Development",
+                body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
+              },
             ].map((g, i) => (
               <div
                 key={g.num}
