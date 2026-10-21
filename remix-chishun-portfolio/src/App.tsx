@@ -2249,24 +2249,19 @@ export default function Portfolio() {
           {/* 3 goal cards */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 72 }}>
             {[
-              {
-                num: "01",
-                zh: "需求研究與設計思考",
-                en: "Research & Design Thinking",
-                body: "運用心理學紮實之質性訪談與行為數據訓練，深入研究不同族群在各場景的心理路徑與文化脈絡，提供精準之設計決策依據與服務架構。",
-              },
-              {
-                num: "02",
-                zh: "大規模專案決策與協作",
-                en: "Large-Scale Project Decision",
-                body: "學習在節奏緊湊與跨利害關係人的複雜環境中，進行資源優先級排序、風險預判管理、敏捷排程與高質量團隊決策制定。",
-              },
-              {
-                num: "03",
-                zh: "服務與體驗設計落地",
-                en: "Service & Experience Design",
-                body: "透過實際場域接觸，培養體驗研究者的第一線感知力，將抽象的品牌策略轉化為真實受眾感動並津津樂道的立體體驗。",
-              },
+            {
+              num: "01",
+              zh: "認知防衛與決策機制研究",
+              en: "Self-Esteem, Task Difficulty & Self-Handicapping",
+              body: "探討個體在面對壓力情境時的自我設限行為與心理防衛機制。透過嚴謹的實驗設計與變因控制，量化分析不同自尊程度者在困難挑戰下的行為決策，鍛鍊將複雜行為歸因轉化為使用者動機洞察的能力。",
+            },
+            {
+              num: "02",
+              zh: "脈絡洞察與質性發展研究",
+              en: "Atypical Family Structures & Child Development",
+              body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
+            },
+          }
             ].map((g, i) => (
               <div
                 key={g.num}
