@@ -2188,7 +2188,6 @@ export default function Portfolio() {
             glow={ATMOSPHERES.vol6.glow}
           />
 
-          {/* 2 research cards with exact titles */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 72 }}>
             {[
               {
