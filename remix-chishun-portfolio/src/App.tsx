@@ -21,7 +21,6 @@ import ted2025StageImg from "./assets/images/regenerated_image_1792477691610.jpg
 import ted2025MeetingImg from "./assets/images/regenerated_image_1792323615752.jpg";
 
 /* ─── OBSIDIAN BLACK PALETTE & CHROMATIC AURORA FLOW ────────────────── */
-// Deep pitch-black base (#050508) infused with kinetic flowing gradient auroras tailored to each volume:
 const ATMOSPHERES: Record<string, {
   name: string;
   en: string;
@@ -141,9 +140,9 @@ const ATMOSPHERES: Record<string, {
 
 /* ─── BASE OBSIDIAN BLACK TOKENS ─────────────────────────────────────── */
 const T = {
-  text:    "#FFFFFF",       // Crisp pure luminous white
-  textSub: "#A1A1AA",       // Zinc 400 soft mist silver
-  textDim: "#71717A",       // Zinc 500 dusk charcoal
+  text:    "#FFFFFF",
+  textSub: "#A1A1AA",
+  textDim: "#71717A",
   card:    "linear-gradient(155deg, rgba(18, 18, 24, 0.72) 0%, rgba(8, 8, 12, 0.86) 100%)",
   cardHov: "linear-gradient(155deg, rgba(28, 28, 36, 0.86) 0%, rgba(14, 14, 20, 0.94) 100%)",
   navBg:   "rgba(5, 5, 8, 0.85)",
@@ -171,7 +170,6 @@ html, body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Background layers smoothly crossfading */
 .bg-layer {
   position: fixed;
   inset: 0;
@@ -181,7 +179,6 @@ html, body {
   will-change: opacity;
 }
 
-/* Continuous flowing gradient keyframe animations */
 @keyframes flowOrb1 {
   0%   { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
   25%  { transform: translate3d(7vw, 10vh, 0) scale(1.15) rotate(45deg); }
@@ -269,7 +266,6 @@ html, body {
   box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.9), 0 0 24px rgba(255, 255, 255, 0.03);
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -288,21 +284,14 @@ html, body {
 
 /* ─── IMAGES ────────────────────────────────────────────────────────── */
 const IMG = {
-  // VOL.3 雨山祭 (3 photos)
   festival: festivalHeroImg,
   festivalStage: festivalStageImg,
   festivalCrowd: festivalCrowdImg,
   festivalCrew: festivalHeroImg,
-
-  // VOL.4 TEDx2024 (2 photos)
   ted2024Audience: ted2024AudienceImg,
   ted2024Speaker: speakerImg,
-
-  // VOL.5 TEDx2025 (2 photos)
   ted2025Stage: ted2025StageImg,
   ted2025Meeting: ted2025MeetingImg,
-
-  // Aliases for compatibility
   speaker: speakerImg,
   audience: ted2024AudienceImg,
   meeting: ted2025MeetingImg,
@@ -628,8 +617,6 @@ function Impact({
   };
 }) {
   const [isHovered, setIsHovered] = useState(false);
-
-  // Strip trailing arrow from text if present so we render animated interactive arrow element
   const displayText = text.replace(/\s*→\s*$/, "");
 
   return (
@@ -675,7 +662,6 @@ function Impact({
         </span>
       </div>
 
-      {/* Detailed Dark Floating Tooltip Card */}
       {tooltip && isHovered && (
         <div
           style={{
@@ -694,7 +680,6 @@ function Impact({
           }}
           className="text-left"
         >
-          {/* Subtle triangle notch pointing down to button */}
           <div
             style={{
               position: "absolute",
@@ -1056,7 +1041,6 @@ function Sec({
         transition: "background 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
-      {/* Subtle Project-Specific Ambient Glow Layer */}
       {ambientColor && (
         <div
           style={{
@@ -1069,7 +1053,6 @@ function Sec({
           }}
           aria-hidden="true"
         >
-          {/* Top-centered soft ambient glow halo */}
           <div
             style={{
               position: "absolute",
@@ -1084,7 +1067,6 @@ function Sec({
               transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
           />
-          {/* Vertical wash seamlessly feathered at top and bottom */}
           <div
             style={{
               position: "absolute",
@@ -1124,7 +1106,6 @@ export default function Portfolio() {
   const [selectedCase, setSelectedCase] = useState<string | null>(null);
   const [lightboxImg, setLightboxImg] = useState<{ src: string; caption: string } | null>(null);
 
-  // Active color atmosphere dynamically based on scroll position
   const curAtmos = useMemo(() => ATMOSPHERES[active] || ATMOSPHERES.vol1, [active]);
 
   useEffect(() => {
@@ -1133,12 +1114,10 @@ export default function Portfolio() {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 20);
 
-      // Calculate total page scroll percentage
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? Math.min(Math.max(scrollY / docHeight, 0), 1) : 0;
       setScrollProgress(progress);
 
-      // Section spy
       for (let i = IDS.length - 1; i >= 0; i--) {
         const el = document.getElementById(IDS[i]);
         if (el && el.getBoundingClientRect().top <= HDR + 120) {
@@ -1180,8 +1159,6 @@ export default function Portfolio() {
     <>
       <style>{CSS}</style>
 
-      {/* ══ DYNAMIC FLOWING GRADIENT AURORA BACKGROUND (KINETIC MESH) ══ */}
-      {/* Deep Obsidian Pitch Black Base */}
       <div
         style={{
           position: "fixed",
@@ -1193,7 +1170,6 @@ export default function Portfolio() {
         aria-hidden="true"
       />
 
-      {/* Layered Flowing Aurora Gradients for each Volume (Crossfading smoothly on scroll) */}
       {Object.entries(ATMOSPHERES).map(([id, atmos]) => (
         <div
           key={id}
@@ -1204,7 +1180,6 @@ export default function Portfolio() {
           }}
           aria-hidden="true"
         >
-          {/* Flowing Orb 1 - Signature Accent Light (Top-Right drifting and rotating) */}
           <div
             style={{
               position: "absolute",
@@ -1223,7 +1198,6 @@ export default function Portfolio() {
             }}
           />
 
-          {/* Flowing Orb 2 - Harmonic Ambient Twilight (Bottom-Left organic translation) */}
           <div
             style={{
               position: "absolute",
@@ -1242,7 +1216,6 @@ export default function Portfolio() {
             }}
           />
 
-          {/* Flowing Orb 3 - Ethereal Mid-Tone Glow (Center-Right pulsing aura) */}
           <div
             style={{
               position: "absolute",
@@ -1261,7 +1234,6 @@ export default function Portfolio() {
             }}
           />
 
-          {/* Flowing Orb 4 - Ambient Counter-Aura (Top-Left floating presence) */}
           <div
             style={{
               position: "absolute",
@@ -1282,7 +1254,6 @@ export default function Portfolio() {
         </div>
       ))}
 
-      {/* Global Animated Flowing Gradient Stream Ribbon */}
       <div
         style={{
           position: "fixed",
@@ -1298,7 +1269,6 @@ export default function Portfolio() {
         aria-hidden="true"
       />
 
-      {/* Deep Obsidian Radial Vignette - soft dark cinema frame */}
       <div
         style={{
           position: "fixed",
@@ -1310,7 +1280,6 @@ export default function Portfolio() {
         aria-hidden="true"
       />
 
-      {/* Main Container */}
       <div
         style={{
           color: T.text,
@@ -1321,7 +1290,6 @@ export default function Portfolio() {
           zIndex: 1,
         }}
       >
-        {/* ══ TOP PROGRESS LINE (ANIMATED FLOWING GRADIENT) ══════════════ */}
         <div
           style={{
             position: "fixed",
@@ -1338,7 +1306,6 @@ export default function Portfolio() {
           }}
         />
 
-        {/* ══ TOAST NOTIFICATION ════════════════════════════════════ */}
         {copyFeedback && (
           <div
             style={{
@@ -1365,7 +1332,6 @@ export default function Portfolio() {
           </div>
         )}
 
-        {/* ══ FLOATING OBSIDIAN HEADER (BORDERLESS WITH SOFT BLUR) ══ */}
         <header
           style={{
             position: "fixed",
@@ -1385,7 +1351,6 @@ export default function Portfolio() {
             padding: "0 40px",
           }}
         >
-          {/* Branding */}
           <div
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             style={{ flexShrink: 0, cursor: "pointer" }}
@@ -1401,7 +1366,6 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Desktop nav links - frosted obsidian floating pills */}
           <nav
             className="hidden md:flex items-center gap-1"
             style={{
@@ -1433,7 +1397,6 @@ export default function Portfolio() {
             ))}
           </nav>
 
-          {/* Mobile menu trigger */}
           <div className="flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -1446,7 +1409,6 @@ export default function Portfolio() {
           </div>
         </header>
 
-        {/* Soft downward gradient fade apron beneath header for seamless fade-out of scrolling content */}
         <div
           style={{
             position: "fixed",
@@ -1463,7 +1425,6 @@ export default function Portfolio() {
           aria-hidden="true"
         />
 
-        {/* Mobile dropdown menu */}
         {mobileMenuOpen && (
           <div
             style={{
@@ -1506,7 +1467,6 @@ export default function Portfolio() {
           </div>
         )}
 
-        {/* spacer */}
         <div style={{ height: HDR + 20 }} />
 
         {/* ══ VOL.1 — ABOUT ════════════════════════════════════════ */}
@@ -1530,7 +1490,6 @@ export default function Portfolio() {
               alignItems: "center",
             }}
           >
-            {/* Left nameplate & reserved photo space */}
             <div
               style={{
                 display: "flex",
@@ -1540,7 +1499,6 @@ export default function Portfolio() {
                 flex: "0 0 auto",
               }}
             >
-              {/* Name Details */}
               <div style={{ minWidth: 200 }}>
                 <Eye accent={ATMOSPHERES.vol1.accent}>APPLICANT</Eye>
                 <h1
@@ -1568,7 +1526,6 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Right core belief statement */}
             <div style={{ flex: "1 1 360px", minWidth: 0 }}>
               <div
                 style={{
@@ -1591,10 +1548,9 @@ export default function Portfolio() {
                   marginBottom: 28,
                 }}
               >
-                以深厚的心理學研究經驗為基底，帶著古靈精怪的眼光去觀察世界。我專注於從人的需求出發，將獨特的視角與情緒洞察能力，轉化為真正打動人心、可落地的展演與體驗設計。
+                我是政大心理系的潘琪舜。心理學的訓練讓我習慣從「人的需求」出發去觀察與思考；而對於各式文化的熱愛，則驅使我把這些洞察轉化為實際的企劃。我擅於將抽象的行為觀察收斂成具體的方案，並在實際執行中持續疊代驗證。我期望結合心理學洞察、設計思考與專案管理，打造出能解決問題、引發共鳴的體驗。
               </p>
 
-              {/* Seamless tags */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
                 {[
                   "使用者行為洞察",
@@ -1626,7 +1582,6 @@ export default function Portfolio() {
           </div>
         </Sec>
 
-        {/* Ticker banner */}
         <Ticker
           items={[
             "政大雨山祭 NCCU Music Festival",
@@ -1683,7 +1638,6 @@ export default function Portfolio() {
                 title: "2025 TEDxNCCU《流・形》",
                 period: "2024.07 – 2025.06",
                 role: "講者部 部長 · Project Lead",
-              
                 impact: "200+ 人次參與",
                 accent: ATMOSPHERES.vol5.accent,
                 accentBg: ATMOSPHERES.vol5.accentBg,
@@ -1757,11 +1711,8 @@ export default function Portfolio() {
                   >
                     {p.role}
                   </div>
-                  <p style={{ color: T.textSub, lineHeight: "1.8", marginBottom: 28 }} className="text-xs">
-                    {p.desc}
-                  </p>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 20 }}>
                   <Pill
                     inv
                     accent={p.accent}
@@ -1821,12 +1772,11 @@ export default function Portfolio() {
                 style={{ color: T.textSub, lineHeight: "2.0", letterSpacing: "0.05em" }}
                 className="text-base"
               >
-                雨山祭為校內大型學生音樂祭，我負責前期企劃、流程規劃、人力場地協調與現場應變。整合主舞台表演與周邊市集，讓聽眾能在聽音樂之餘，還能有逛市集或其他遊戲高活動體驗。
+                雨山祭為校內大型學生音樂祭，我負責前期企劃、流程規劃、人力場地協調與現場應變。整合主舞台表演與周邊市集，設計無縫切換的現場動線，讓聽眾能在聽音樂與逛市集之間享受最高品質的活動體驗。
               </p>
             </div>
           </div>
 
-          {/* Two photos balanced duo gallery */}
           <div
             className="fu3"
             style={{
@@ -1836,7 +1786,6 @@ export default function Portfolio() {
               marginBottom: 52,
             }}
           >
-            {/* Photo 1: Main Stage */}
             <div style={{ flex: "1 1 340px", minWidth: 0 }}>
               <PhotoHero
                 src={IMG.festival}
@@ -1851,7 +1800,6 @@ export default function Portfolio() {
               />
             </div>
 
-            {/* Photo 2: Official merchandise & stage gear */}
             <div style={{ flex: "1 1 340px", minWidth: 0 }}>
               <PhotoHero
                 src={IMG.festivalStage}
@@ -1867,7 +1815,6 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* responsibilities header with aligned impact button */}
           <Eye s={{ marginBottom: 16 }} accent={ATMOSPHERES.vol3.accent}>KEY RESPONSIBILITIES</Eye>
           <div
             style={{
@@ -1883,14 +1830,13 @@ export default function Portfolio() {
             }}
           >
             {[
-              { n: "01", t: "前期企劃發想", d: "參與前期活動內容發想與企劃，規劃活動形式與執行流程，制定舞台節目與周邊互動方案。" },
+              { n: "01", t: "前期企劃發想", d: "參與前期活動內容發想與企劃，規劃活動形式與執行流程，制定舞台節目與市集周邊互動方案。" },
               { n: "02", t: "流程規劃統籌", d: "規劃當日流程，確認人力配置、場地與各項硬體搭建事項，落實雨天備案。" },
               { n: "03", t: "現場執行調度", d: "負責現場執行與流程掌控，依現場人潮即時調整通道，處置突發狀況，確保活動如期圓滿。" },
             ].map((r) => (
               <Resp key={r.n} n={r.n} title={r.t} desc={r.d} accent={ATMOSPHERES.vol3.accent} />
             ))}
 
-            {/* Bottom-right interactive borderless retrospective link */}
             <div
               style={{
                 display: "flex",
@@ -1975,7 +1921,6 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Two photos balanced duo gallery */}
           <div
             className="fu3"
             style={{
@@ -2035,7 +1980,6 @@ export default function Portfolio() {
               <Resp key={r.n} n={r.n} title={r.t} desc={r.d} accent={ATMOSPHERES.vol4.accent} />
             ))}
 
-            {/* Bottom-right interactive borderless retrospective link */}
             <div
               style={{
                 display: "flex",
@@ -2129,7 +2073,6 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Two photos balanced duo gallery */}
           <div
             className="fu3"
             style={{
@@ -2189,7 +2132,6 @@ export default function Portfolio() {
               <Resp key={r.n} n={r.n} title={r.t} desc={r.d} accent={ATMOSPHERES.vol5.accent} />
             ))}
 
-            {/* Bottom-right interactive borderless retrospective link */}
             <div
               style={{
                 display: "flex",
@@ -2235,7 +2177,7 @@ export default function Portfolio() {
           accent={curAtmos.accent}
         />
 
-       {/* ══ VOL.6 — VISION & CONTACT ═══════════════════════════════ */}
+        {/* ══ VOL.6 — VISION & CONTACT ═══════════════════════════════ */}
         <Sec id="vol6">
           <SecHead
             pill="VOL.6 FUTURE VISION & FIT"
@@ -2266,7 +2208,7 @@ export default function Portfolio() {
                 key={g.num}
                 className={`hovcard fu${i + 2}`}
                 style={{
-                  flex: "1 1 300px",
+                  flex: "1 1 340px",
                   minWidth: 0,
                   background: T.card,
                   backdropFilter: "blur(20px)",
@@ -2317,7 +2259,6 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Contact block — obsidian mirror of user's brand card */}
           <div
             style={{
               background: "linear-gradient(155deg, rgba(18, 18, 24, 0.88) 0%, rgba(8, 8, 12, 0.95) 100%)",
@@ -2330,7 +2271,6 @@ export default function Portfolio() {
               overflow: "hidden",
             }}
           >
-            {/* Luminous coral aura beam inside contact card */}
             <div
               style={{
                 position: "absolute",
@@ -2355,7 +2295,6 @@ export default function Portfolio() {
               }}
             >
               <div style={{ display: "flex", flexWrap: "wrap", gap: 48, maxWidth: 800 }}>
-                {/* Telephone */}
                 <div>
                   <div
                     style={{ color: ATMOSPHERES.vol6.accent, letterSpacing: "0.18em", marginBottom: 8, fontWeight: 700 }}
@@ -2373,7 +2312,7 @@ export default function Portfolio() {
                         fontFamily: "'Cormorant Garamond', 'Georgia', serif",
                       }}
                     >
-                      +886 90707156
+                      +886 907071156
                     </span>
                     <button
                       onClick={() => copyText("0907071156", "電話號碼")}
@@ -2387,7 +2326,6 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div>
                   <div
                     style={{ color: ATMOSPHERES.vol6.accent, letterSpacing: "0.18em", marginBottom: 8, fontWeight: 700 }}
@@ -2419,7 +2357,6 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* University */}
                 <div>
                   <div
                     style={{ color: ATMOSPHERES.vol6.accent, letterSpacing: "0.18em", marginBottom: 8, fontWeight: 700 }}
@@ -2469,7 +2406,7 @@ export default function Portfolio() {
             © 2026 潘琪舜 Chi-shun Pan — Portfolio &#39;26
           </span>
 
-          <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 20, itemsCenter: "center", flexWrap: "wrap" }}>
             {["VOL.1", "VOL.2", "VOL.3", "VOL.4", "VOL.5"].map((v) => (
               <span key={v} style={{ color: T.textDim, letterSpacing: "0.1em", opacity: 0.7 }} className="text-xs font-sans-meta">
                 {v}
