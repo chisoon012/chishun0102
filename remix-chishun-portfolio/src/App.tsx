@@ -2261,7 +2261,7 @@ export default function Portfolio() {
               en: "Atypical Family Structures & Child Development",
               body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
             },
-          }
+          
             ].map((g, i) => (
               <div
                 key={g.num}
