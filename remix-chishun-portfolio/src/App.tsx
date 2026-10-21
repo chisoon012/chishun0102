@@ -1150,7 +1150,7 @@ export default function Portfolio() {
     { id: "vol3", label: "VOL.3 NCCU Music Festival" },
     { id: "vol4", label: "VOL.4 TEDx2024" },
     { id: "vol5", label: "VOL.5 TEDx2025" },
-    { id: "vol6", label: "VOL.6 我的心理學研究" },
+    { id: "vol6", label: "VOL.6 PSY" },
   ];
 
   const activeCaseData = selectedCase ? CASE_DETAILS[selectedCase as keyof typeof CASE_DETAILS] : null;
@@ -2180,7 +2180,7 @@ export default function Portfolio() {
         {/* ══ VOL.6 — MY PSYCHOLOGY RESEARCH & CONTACT ═════════════════ */}
         <Sec id="vol6">
           <SecHead
-            pill="VOL.6 我的心理學研究"
+            pill="VOL.6 PSY"
             right="ACADEMIC & BEHAVIORAL INSIGHTS"
             accent={ATMOSPHERES.vol6.accent}
             accentGrad={ATMOSPHERES.vol6.accentGrad}
