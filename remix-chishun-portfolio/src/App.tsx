@@ -1150,7 +1150,7 @@ export default function Portfolio() {
     { id: "vol3", label: "VOL.3 NCCU Music Festival" },
     { id: "vol4", label: "VOL.4 TEDx2024" },
     { id: "vol5", label: "VOL.5 TEDx2025" },
-    { id: "vol6", label: "VOL.6 Vision" },
+    { id: "vol6", label: "VOL.6 我的心理學研究" },
   ];
 
   const activeCaseData = selectedCase ? CASE_DETAILS[selectedCase as keyof typeof CASE_DETAILS] : null;
@@ -2177,32 +2177,32 @@ export default function Portfolio() {
           accent={curAtmos.accent}
         />
 
-        {/* ══ VOL.6 — VISION & CONTACT ═══════════════════════════════ */}
+        {/* ══ VOL.6 — MY PSYCHOLOGY RESEARCH & CONTACT ═════════════════ */}
         <Sec id="vol6">
           <SecHead
-            pill="VOL.6 FUTURE VISION & FIT"
-            right="INTERNSHIP APPLICATION"
+            pill="VOL.6 我的心理學研究"
+            right="ACADEMIC & BEHAVIORAL INSIGHTS"
             accent={ATMOSPHERES.vol6.accent}
             accentGrad={ATMOSPHERES.vol6.accentGrad}
             accentBg={ATMOSPHERES.vol6.accentBg}
             glow={ATMOSPHERES.vol6.glow}
           />
 
-          {/* 2 goal cards */}
+          {/* 2 research cards with exact titles */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 72 }}>
             {[
               {
                 num: "01",
-                zh: "認知防衛與決策機制研究",
+                zh: "自尊程度與測驗情境困難度對自我設限使用程度之影響",
                 en: "Self-Esteem, Task Difficulty & Self-Handicapping",
                 body: "探討個體在面對壓力情境時的自我設限行為與心理防衛機制。透過嚴謹的實驗設計與變因控制，量化分析不同自尊程度者在困難挑戰下的行為決策，鍛鍊將複雜行為歸因轉化為使用者動機洞察的能力。",
               },
               {
                 num: "02",
-                zh: "脈絡洞察與質性發展研究",
+                zh: "非典型家庭與兒童發展研究",
                 en: "Atypical Family Structures & Child Development",
                 body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
-              },
+              }
             ].map((g, i) => (
               <div
                 key={g.num}
@@ -2236,9 +2236,9 @@ export default function Portfolio() {
                   <div
                     style={{
                       color: T.text,
-                      letterSpacing: "0.04em",
+                      letterSpacing: "0.03em",
                       lineHeight: 1.45,
-                      marginBottom: 6,
+                      marginBottom: 8,
                       fontWeight: 700,
                     }}
                     className="text-lg"
@@ -2246,7 +2246,7 @@ export default function Portfolio() {
                     {g.zh}
                   </div>
                   <div
-                    style={{ color: T.textDim, letterSpacing: "0.1em", marginBottom: 18 }}
+                    style={{ color: T.textDim, letterSpacing: "0.08em", marginBottom: 18 }}
                     className="text-xs font-sans-meta font-medium"
                   >
                     {g.en}
@@ -2406,7 +2406,7 @@ export default function Portfolio() {
             © 2026 潘琪舜 Chi-shun Pan — Portfolio &#39;26
           </span>
 
-          <div style={{ display: "flex", gap: 20, itemsCenter: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
             {["VOL.1", "VOL.2", "VOL.3", "VOL.4", "VOL.5"].map((v) => (
               <span key={v} style={{ color: T.textDim, letterSpacing: "0.1em", opacity: 0.7 }} className="text-xs font-sans-meta">
                 {v}
