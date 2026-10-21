@@ -1661,7 +1661,6 @@ export default function Portfolio() {
                 title: "政大雨山祭 · NCCU Music Festival",
                 period: "2025.09 – 2026.04",
                 role: "活動企劃與現場執行",
-                desc: "校園千人大型音樂祭典，統籌活動形式、當日流程與天候應變機制",
                 impact: "1,000+ 人次參與",
                 accent: ATMOSPHERES.vol3.accent,
                 accentBg: ATMOSPHERES.vol3.accentBg,
