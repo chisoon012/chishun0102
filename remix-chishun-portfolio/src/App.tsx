@@ -2202,7 +2202,9 @@ export default function Portfolio() {
                 num: "02.",
                 zh: "非典型家庭與兒童發展研究",
                 en: "Atypical Family Structures & Child Development",
-                body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
+                body: `• 研究焦點：探討收養與寄養等非典型家庭對兒童生理發育、情緒調節及依附關係之影響[cite: 15, 18, 22, 27]。
+• 關鍵發現：早期逆境與環境頻繁轉換易致發展挑戰[cite: 22, 65]；家庭功能（照顧與安全感）遠比結構更關鍵[cite: 43]。
+• 輔導啟示：倡導創傷知情與穩定支持系統，協助非典型族群克服早期困境健全成長[cite: 67, 71, 74]。`
               }
             ].map((g, i) => (
               <div
@@ -2257,7 +2259,7 @@ export default function Portfolio() {
                       color: T.textSub, 
                       lineHeight: "1.9", 
                       letterSpacing: "0.04em",
-                      whiteSpace: "pre-line" // 👈 關鍵：在 <p> 標籤加上這行，換行與列點就會生效
+                      whiteSpace: "pre-line" // 👈 確保換行與列點正確顯示
                     }} 
                     className="text-xs"
                   >
