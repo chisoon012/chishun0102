@@ -2191,11 +2191,11 @@ export default function Portfolio() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 72 }}>
             {[
               {
-                num: "01",
-                zh: "自尊程度與測驗情境困難度對自我設限使用程度之影響",
-                en: "Self-Esteem, Task Difficulty & Self-Handicapping",
-                body: "探討個體在面對壓力情境時的自我設限行為與心理防衛機制。透過嚴謹的實驗設計與變因控制，量化分析不同自尊程度者在困難挑戰下的行為決策，鍛鍊將複雜行為歸因轉化為使用者動機洞察的能力。",
-              },
+  num: "01.",
+  zh: "自尊程度與測驗情境困難度對自我設限使用程度之影響",
+  en: "Self-Esteem, Task Difficulty & Self-Handicapping",
+  body: `本研究採二因子混合設計（有效受試者 62 人），探討「自尊程度」與「測驗難度（會考/學測英文）」對「自我設限行為」的影響。\n\n實驗結果與結論：變異數分析顯示，自尊主效果、情境難度主效果及兩者的交互作用均未達統計顯著。未達顯著的主因包含：自我設限測量工具信度偏低（Cronbach's α = 0.50）、線上問卷未能引發足夠的自我威脅感，以及題型型態不一致與分組方式等限制。`
+},
               {
                 num: "02",
                 zh: "非典型家庭與兒童發展研究",
