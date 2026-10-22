@@ -2191,13 +2191,15 @@ export default function Portfolio() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, marginBottom: 72 }}>
             {[
               {
-  num: "01.",
-  zh: "自尊程度與測驗情境困難度對自我設限使用程度之影響",
-  en: "Self-Esteem, Task Difficulty & Self-Handicapping",
-  body: `本研究採二因子混合設計（有效受試者 62 人），探討「自尊程度」與「測驗難度（會考/學測英文）」對「自我設限行為」的影響。\n\n實驗結果與結論：變異數分析顯示，自尊主效果、情境難度主效果及兩者的交互作用均未達統計顯著。未達顯著的主因包含：自我設限測量工具信度偏低（Cronbach's α = 0.50）、線上問卷未能引發足夠的自我威脅感，以及題型型態不一致與分組方式等限制。`
-},
+                num: "01.",
+                zh: "自尊程度與測驗情境困難度對自我設限使用程度之影響",
+                en: "Self-Esteem, Task Difficulty & Self-Handicapping",
+                body: `• 研究設計：採二因子混合設計（N=62），探討自尊高低與測驗難度對自我設限之影響。
+• 實驗結果：變異數分析顯示主效果與交互作用均未達統計顯著。
+• 洞察檢討：剖析工具信度（α = 0.50）、情境威脅感與題型異質性，展現量化分析與心理歸因能力。`
+              },
               {
-                num: "02",
+                num: "02.",
                 zh: "非典型家庭與兒童發展研究",
                 en: "Atypical Family Structures & Child Development",
                 body: "深入非典型家庭結構的真實生活脈絡，運用質性深度訪談與情境觀察，拆解環境因素對兒童心理發展的交互影響。養成從系統化角度剖析非典型族群需求、發掘隱性痛點的敏銳觀察力。",
@@ -2230,7 +2232,7 @@ export default function Portfolio() {
                       fontFamily: "'Cormorant Garamond', serif",
                     }}
                   >
-                    {g.num}.
+                    {g.num}
                   </div>
                   <div
                     style={{
@@ -2250,7 +2252,15 @@ export default function Portfolio() {
                   >
                     {g.en}
                   </div>
-                  <p style={{ color: T.textSub, lineHeight: "1.9", letterSpacing: "0.04em" }} className="text-xs">
+                  <p 
+                    style={{ 
+                      color: T.textSub, 
+                      lineHeight: "1.9", 
+                      letterSpacing: "0.04em",
+                      whiteSpace: "pre-line" // 👈 關鍵：在 <p> 標籤加上這行，換行與列點就會生效
+                    }} 
+                    className="text-xs"
+                  >
                     {g.body}
                   </p>
                 </div>
